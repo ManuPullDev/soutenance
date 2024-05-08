@@ -1,0 +1,228 @@
+*, *::after, *::before{
+	box-sizing: border-box;
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: 500ms ease-in-out;
+	border: 1px solid black;
+	border-radius: 10px;
+	z-index: 1;
+	background-color: white;
+	width: 800px;
+	max-width: 80%;
+}
+
+.modal.active {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+	padding: 10px 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.modal-header .close-button {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.modal-body {
+	padding: 10px 15px;
+}
+
+#overlay {
+	position: fixed;
+	opacity: 0; 
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .5);
+	pointer-events: none;
+}
+
+#overlay.active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+  /*Styles des cards*/
+
+
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.slide-container{
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-evenly; /* Pour espacer les cartes de manière égale */
+  gap: 10px;
+}
+
+
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+}
+
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 14px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+.button{
+  border: none;
+  font-size: 10px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #4070F4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+}
+.button:hover{
+  background: #265DF2;
+}
+
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
+
+.swiper-navBtn {
+  display: flex;
+  position: absolute; /* Position absolue par rapport au conteneur parent */
+  top: 50%; /* Alignement vertical au centre */
+  transform: translateY(-50%); /* Décalage de la moitié de la hauteur */
+  color: #000000;
+  font-size: 0px; /* Taille de la police */
+  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  transition: color 0.3s ease; /* Transition pour un effet de survol */
+  z-index: 1;
+  width: 30px; /* Largeur du bouton */
+  height: 30px; /* Hauteur du bouton */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image de fond */
+}
+
+.swiper-button-next {
+  right: 0; /* Position à droite */
+  /*background-image: url('images/right-arrow.png'); /* Image de fond pour le bouton "Next" */
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: calc(68% - 30px);
+  
+}
+
+.swiper-button-prev {
+  left: 0; /* Position à gauche */
+  /*background-image: url('images/right-arrow.png'); /* Image de fond pour le bouton "Next" */
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(-180deg);
+  top: calc(50% - 30px);
+	
+}
+
+.swiper-navBtn:hover {
+  color: #4070F4; /* Changement de couleur au survol */
+}
+
+
+/* Slider CSS*/
+
+#swiper-container .btn{
+	position: absolute;
+	top: calc(50% - 30px);
+	height: 25px; 
+	width: 25px;
+	border-left: 8px solid #000000;
+	border-top: 8px solid #000000;
+	cursor: pointer;
+}
+
+#swiper-container .btn:hover {
+	transform: scale(1.2);
+}
+
+
+
+#swiper-container .btn:last-of-type {
+	transform: rotate(135deg);
+	right: 10px;
+}
+
+
+
+
+#slider-container #slider {
+	display: flex;
+	width: 1000%;
+	height: 100%;
+	transition: all .5s;
+}
+#slider-container #slider .slide {
+	height: 90%;
+	margin: auto 10px;
+	display: grid;
+	place-items: center;
+}
+
